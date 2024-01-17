@@ -1,0 +1,998 @@
+.css-a0y2e3 {
+    height: 0px;
+    overflow: hidden;
+    transition: height 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    visibility: hidden;
+}
+
+.css-hboir5 {
+    display: flex;
+    width: 100%;
+}
+
+.css-8atqhb {
+    width: 100%;
+}
+
+.css-1np3eo0 {
+    padding-left: 0px;
+}
+
+.css-1jyx3tm {
+    width: 100%;
+    margin-left: auto;
+    box-sizing: border-box;
+    margin-right: auto;
+    display: block;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.css-1s51pwm {
+    margin: 0px 0px 4px;
+    line-height: 1.2;
+    font-size: 1.75rem;
+    font-family: Baikal, Inter, sans-serif;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+    text-align: center;
+}
+
+.css-nlvhco {
+    margin: 0px 0px 16px;
+    font-size: 1rem;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    color: rgb(58, 58, 58);
+    text-align: center;
+}
+
+.css-1xwmp6c {
+    width: 37.5rem;
+    margin: auto;
+}
+
+.css-ntxdzt {
+    border-bottom: 1px solid rgb(243, 243, 243);
+    margin-bottom: 1.875rem;
+}
+
+.css-ntxdzt .MuiBox-root {
+    border-bottom: 0px;
+}
+
+.css-1lgzzji .MuiTabs-root {
+    min-height: 3rem;
+}
+
+.css-1anid1y {
+    position: relative;
+    display: inline-block;
+    flex: 1 1 auto;
+    white-space: nowrap;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.css-ntxdzt .MuiBox-root .MuiTabs-flexContainer {
+    -webkit-box-pack: center;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.css-k008qs {
+    display: flex;
+}
+
+.css-xjfrmp {
+    overflow: hidden;
+    min-height: 48px;
+    display: flex;
+}
+
+.css-1wu90r0 {
+    border-bottom: 1px solid rgb(224, 224, 224);
+    border-top-color: rgb(224, 224, 224);
+    border-right-color: rgb(224, 224, 224);
+    border-left-color: rgb(224, 224, 224);
+}
+
+.css-ntxdzt .MuiBox-root .MuiTabs-flexContainer .MuiButtonBase-root {
+    color: rgb(206, 206, 206);
+    padding-bottom: 0.5rem;
+}
+
+.css-w0pj6f {
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    z-index: 0;
+    inset: 0px;
+    border-radius: inherit;
+}
+
+.css-du1h6 {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: rgb(206, 206, 206);
+    background: rgb(210, 231, 251);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin: 0px auto 0.5rem;
+}
+
+.css-du1h6>svg {
+    fill: rgb(16, 129, 232);
+    width: 20px;
+    height: 24px;
+}
+
+.css-19dq8mx {
+    margin: 0px;
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+.css-14yq2cq {
+    user-select: none;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    fill: currentcolor;
+    flex-shrink: 0;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-size: 1.71429rem;
+}
+
+.css-1lgzzji .MuiButtonBase-root {
+    font-size: 0.875rem;
+    color: rgb(12, 12, 12);
+    text-transform: capitalize;
+    min-height: 3rem;
+    padding: 1.25rem 1rem;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.css-w0pj6f {
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    z-index: 0;
+    inset: 0px;
+    border-radius: inherit;
+}
+
+.css-du1h6 {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: rgb(206, 206, 206);
+    background: rgb(210, 231, 251);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin: 0px auto 0.5rem;
+}
+
+.css-du1h6>svg {
+    fill: rgb(16, 129, 232);
+    width: 20px;
+    height: 24px;
+}
+
+/* <style> */
+.css-w0pj6f {
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    z-index: 0;
+    inset: 0px;
+    border-radius: inherit;
+}
+
+.css-ntxdzt .MuiBox-root .MuiTabs-flexContainer .MuiButtonBase-root.Mui-selected>div span:first-of-type {
+    background-color: rgb(16, 129, 232);
+    color: rgb(255, 255, 255);
+    font-weight: normal;
+}
+
+.css-11de2ni {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: rgb(206, 206, 206);
+    background: rgb(243, 243, 243);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin: 0px auto 0.5rem;
+}
+
+.css-19dq8mx {
+    margin: 0px;
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+.css-w0pj6f {
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    z-index: 0;
+    inset: 0px;
+    border-radius: inherit;
+}
+
+.css-14yq2cq {
+    user-select: none;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    fill: currentcolor;
+    flex-shrink: 0;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-size: 1.71429rem;
+}
+
+.css-1va8a9z {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    background-color: transparent;
+    outline: 0px;
+    border: 0px;
+    margin: 0px;
+    border-radius: 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    font-size: 1rem;
+    line-height: 1.25;
+    font-weight: 400;
+    font-family: Inter, sans-serif;
+    text-transform: uppercase;
+    max-width: 360px;
+    min-width: 90px;
+    position: relative;
+    min-height: 48px;
+    flex-shrink: 0;
+    padding: 12px 16px;
+    overflow: hidden;
+    white-space: normal;
+    text-align: center;
+    flex-direction: column;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.css-9clilk {
+    margin-top: var(--inner-navbar-height);
+}
+
+.css-1bcp6ex {
+    position: relative;
+}
+
+.css-1jyx3tm {
+    width: 100%;
+    margin-left: auto;
+    box-sizing: border-box;
+    margin-right: auto;
+    display: block;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.css-103pp5s {
+    padding: 2rem 0px 2.5rem;
+}
+
+.css-qugrdx {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.css-103pp5s h6 {
+    font-size: 1.375rem;
+    font-weight: 700;
+}
+
+.css-1o9a808 {
+    position: relative;
+}
+
+.css-1lgzzji .MuiTabs-root {
+    min-height: 3rem;
+}
+
+.css-1anid1y {
+    position: relative;
+    display: inline-block;
+    flex: 1 1 auto;
+    white-space: nowrap;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.css-k008qs {
+    display: flex;
+}
+
+
+.css-xjfrmp {
+    overflow: hidden;
+    min-height: 48px;
+    display: flex;
+}
+
+.css-1wu90r0 {
+    border-bottom: 1px solid rgb(224, 224, 224);
+    border-top-color: rgb(224, 224, 224);
+    border-right-color: rgb(224, 224, 224);
+    border-left-color: rgb(224, 224, 224);
+}
+
+.css-na0ki2 {
+    margin: 0px;
+    font-weight: 600;
+    line-height: 1.2;
+    font-size: 1.25rem;
+    font-family: Baikal, Inter, sans-serif;
+    letter-spacing: -0.025em;
+}
+
+.css-1o9a808 .MuiTabs-root .MuiButtonBase-root {
+    color: rgb(107, 107, 107);
+    font-weight: 700;
+    padding: 0px;
+    margin-right: 1.6875rem;
+}
+
+
+.css-1o9a808 .MuiTabs-root .Mui-selected {
+    color: rgb(49, 179, 224) !important;
+}
+
+.css-1lgzzji .MuiButtonBase-root.Mui-selected {
+    color: rgb(16, 129, 232);
+    background-color: transparent;
+}
+
+.css-1va8a9z.Mui-selected {
+    color: rgb(49, 179, 224);
+}
+
+.css-1lgzzji .MuiButtonBase-root {
+    font-size: 0.875rem;
+    color: rgb(12, 12, 12);
+    text-transform: capitalize;
+    min-height: 3rem;
+    padding: 1.25rem 1rem;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.css-1va8a9z {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    background-color: transparent;
+    outline: 0px;
+    border: 0px;
+    margin: 0px;
+    border-radius: 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    font-size: 1rem;
+    line-height: 1.25;
+    font-weight: 400;
+    font-family: Inter, sans-serif;
+    text-transform: uppercase;
+    max-width: 360px;
+    min-width: 90px;
+    position: relative;
+    min-height: 48px;
+    flex-shrink: 0;
+    padding: 12px 16px;
+    overflow: hidden;
+    white-space: normal;
+    text-align: center;
+    flex-direction: column;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.css-w0pj6f {
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    z-index: 0;
+    inset: 0px;
+    border-radius: inherit;
+}
+
+.css-1o9a808 .MuiTabs-root .MuiTabs-indicator {
+    background-color: rgb(49, 179, 224) !important;
+    height: 3px !important;
+}
+
+/* <style> */
+.css-1lgzzji .MuiTabs-indicator {
+    background-color: rgb(16, 129, 232);
+}
+
+/* <style> */
+.css-1jyx3tm {
+    width: 100%;
+    margin-left: auto;
+    box-sizing: border-box;
+    margin-right: auto;
+    display: block;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.css-1ilw1ug {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin: 1.25rem 0px;
+}
+
+.css-1hdy6d7 {
+    margin: 0px;
+    font-size: 1rem;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+}
+
+.css-v4z29n {
+    width: 100%;
+}
+
+.css-1l236ck {
+    position: relative;
+    border-bottom: 1px solid rgb(223, 223, 223);
+    margin-bottom: 1.5rem;
+}
+
+.css-1ozc7yj {
+    position: absolute;
+    height: 2px;
+    bottom: 0px;
+    width: 100%;
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    background-color: rgb(49, 179, 224);
+}
+
+.css-1l236ck span {
+    display: block;
+    font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.css-odp2x9 {
+    margin: 0px;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    color: rgb(157, 157, 157);
+    height: 24px;
+}
+
+.css-otddup {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.css-n0ic7a {
+    margin: 0px;
+    font-size: 1rem;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    color: rgb(12, 12, 12);
+    height: 28px;
+}
+
+.css-f3jfgf button {
+    display: none;
+}
+
+.css-1l236ck {
+    position: relative;
+    border-bottom: 1px solid rgb(223, 223, 223);
+    margin-bottom: 1.5rem;
+}
+
+.css-157kvwd {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    outline: 0px;
+
+    border: 0px;
+    margin: 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    line-height: 1;
+    font-family: Inter, sans-serif;
+    border-radius: 8px;
+    box-shadow: none;
+    text-transform: none;
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    position: absolute;
+    right: 0px;
+    top: 24px;
+    height: 1.3rem;
+    min-width: 1.5rem;
+    padding: 0px;
+    background: rgb(255, 255, 255);
+    color: rgb(16, 129, 232);
+}
+
+.css-1l236ck span {
+    display: block;
+    font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.css-otddup {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.css-n0ic7a {
+    margin: 0px;
+    font-size: 1rem;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    color: rgb(12, 12, 12);
+    height: 28px;
+}
+
+.css-157kvwd {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    outline: 0px;
+    border: 0px;
+    margin: 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    line-height: 1;
+    font-family: Inter, sans-serif;
+    border-radius: 8px;
+    box-shadow: none;
+    text-transform: none;
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    position: absolute;
+    right: 0px;
+    top: 24px;
+    height: 1.3rem;
+    min-width: 1.5rem;
+    padding: 0px;
+    background: rgb(255, 255, 255);
+    color: rgb(16, 129, 232);
+}
+
+.css-1l236ck {
+    position: relative;
+    border-bottom: 1px solid rgb(223, 223, 223);
+    margin-bottom: 1.5rem;
+}
+
+.css-1l236ck span {
+    display: block;
+    font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.css-odp2x9 {
+    margin: 0px;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    color: rgb(157, 157, 157);
+    height: 24px;
+}
+
+.css-otddup {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.css-n0ic7a {
+    margin: 0px;
+    font-size: 1rem;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    color: rgb(12, 12, 12);
+    height: 28px;
+}
+
+.css-157kvwd {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    outline: 0px;
+    border: 0px;
+    margin: 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    line-height: 1;
+    font-family: Inter, sans-serif;
+    border-radius: 8px;
+    box-shadow: none;
+    text-transform: none;
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    position: absolute;
+    right: 0px;
+    top: 24px;
+    height: 1.3rem;
+    min-width: 1.5rem;
+    padding: 0px;
+    background: rgb(255, 255, 255);
+    color: rgb(16, 129, 232);
+}
+
+.css-ywe5xr {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 2rem 0px 3rem;
+}
+
+.css-v4z29n {
+    width: 100%;
+}
+
+.css-1snscsb {
+    max-width: 100%;
+    font-family: Inter, sans-serif;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: 32px;
+    border-radius: 16px;
+    white-space: nowrap;
+    transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    cursor: default;
+    outline: 0px;
+    text-decoration: none;
+    border: 0px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    background-color: rgb(238, 149, 0);
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    font-size: 0.75rem;
+    padding: 0px 0.7rem;
+}
+
+.css-a9ksnh {
+    margin: 0px;
+    font-size: 1rem;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+}
+
+.css-1snscsb svg {
+    font-size: 1rem;
+    margin-right: 0.4rem;
+}
+
+.css-y46nqu {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    outline: 0px;
+    border: 0px;
+    margin: 0px 0px 0px 1rem;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    line-height: 1;
+    font-family: Inter, sans-serif;
+    min-width: 64px;
+    border-radius: 8px;
+    box-shadow: none;
+    text-transform: none;
+    text-align: center;
+    font-size: 0.875rem;
+    height: 2.5rem;
+    padding: 5px 15px;
+    font-weight: 600;
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    background: transparent;
+    color: rgb(16, 129, 232);
+}
+
+.css-y46nqu svg {
+    transform: rotate(270deg);
+    margin-left: 0.2rem;
+}
+
+.css-y46nqu svg {
+    font-size: inherit;
+    color: inherit;
+    transform-origin: center center;
+}
+
+.css-y46nqu>* {
+    line-height: 1em;
+}
+
+.css-y46nqu>* {
+    line-height: 1em;
+}
+
+.css-djswmo {
+    position: relative;
+    margin-bottom: 1rem;
+    display: block;
+    width: 100%;
+}
+
+.css-1q93iy9.MuiFormLabel-root {
+    color: rgb(58, 58, 58);
+    font-size: 0.75rem;
+    margin-bottom: 0.3rem;
+    display: inline-block;
+}
+
+.css-1e4zdh5 {
+    padding: 0px 1rem;
+    height: 2.5rem;
+    width: 100%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    font-style: inherit;
+    font-variant: inherit;
+    font-weight: inherit;
+    font-stretch: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    font-optical-sizing: inherit;
+    font-kerning: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    font-size: 0.875rem;
+    color: rgb(12, 12, 12);
+    border-radius: 8px;
+    border-style: solid;
+    border-color: rgb(206, 206, 206);
+    border-width: 1px;
+    background: rgb(255, 255, 255);
+    caret-color: rgb(107, 107, 107);
+    outline: none;
+    transition: border-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.css-16mboe {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.css-1ke2ig0 {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    outline: 0px;
+    border: 0px;
+    margin: 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    line-height: 1;
+    font-family: Inter, sans-serif;
+    min-width: 64px;
+    padding: 6px 16px;
+    border-radius: 8px;
+    box-shadow: none;
+    text-transform: none;
+    text-align: center;
+    font-size: 0.875rem;
+    height: 2.5rem;
+    color: rgb(255, 255, 255);
+    background-color: rgb(12, 12, 12);
+    font-weight: 600;
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.css-1ke2ig0>* {
+    line-height: 1em;
+}
+
+.css-1xtytu2 {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    outline: 0px;
+    border: 0px;
+    margin: 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    line-height: 1;
+    font-family: Inter, sans-serif;
+    min-width: 64px;
+    border-radius: 8px;
+    box-shadow: none;
+    text-transform: none;
+    text-align: center;
+    font-size: 0.875rem;
+    height: 2.5rem;
+    color: rgb(12, 12, 12);
+    background-color: transparent;
+    padding: 5px 15px;
+    font-weight: 600;
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.css-1xtytu2>* {
+    line-height: 1em;
+}
+
+.css-w0pj6f {
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    z-index: 0;
+    inset: 0px;
+    border-radius: inherit;
+}
+
+.css-w0pj6f {
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    z-index: 0;
+    inset: 0px;
+    border-radius: inherit;
+}
+
+.css-1q93iy9 {
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 1.4375em;
+    font-size: 1.125rem;
+    letter-spacing: -0.01em;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    padding: 0px;
+    position: relative;
+}
+
+.css-w0pj6f {
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    z-index: 0;
+    inset: 0px;
+    border-radius: inherit;
+}
+
+.css-1cw4hi4 {
+    user-select: none;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    fill: currentcolor;
+    flex-shrink: 0;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-size: inherit;
+}
+
+.css-1cw4hi4 {
+    user-select: none;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    fill: currentcolor;
+    flex-shrink: 0;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-size: inherit;
+}

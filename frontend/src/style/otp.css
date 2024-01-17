@@ -1,0 +1,225 @@
+.css-1rr2qeq {
+    width: 33.125rem;
+    background: rgb(255, 255, 255);
+    border-radius: 1.5rem;
+    padding: 2.5rem 4rem;
+}
+
+.css-jvcjjv {
+    margin: 1.25rem 0px 0.5rem;
+    line-height: 1.2;
+    font-size: 1.25rem;
+    font-family: Baikal, Inter, sans-serif;
+    letter-spacing: -0.025em;
+    text-align: center;
+    font-weight: 700;
+}
+
+.css-gd10u0 {
+    margin: 0px;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: rgb(107, 107, 107);
+    font-weight: 500;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.css-re4bfq {
+    margin: 0px;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: rgb(12, 12, 12);
+    font-weight: 600;
+}
+.css-1ehgn4q {
+    cursor: pointer;
+}
+
+.css-1cw4hi4 {
+    user-select: none;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    fill: currentcolor;
+    flex-shrink: 0;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-size: inherit;
+}
+
+.css-1ehgn4q svg {
+    font-size: 0.8rem;
+}
+
+.css-su0pk8 {
+    margin-top: 2rem;
+}
+.css-su0pk8 > div {
+    margin: auto;
+    width: auto;
+}
+
+.css-hyrrih > div:first-of-type input {
+    font: inherit;
+    text-align: center;
+    width: 2.8em;
+    border-radius: 8px;
+    border-style: solid;
+    border-color: rgb(206, 206, 206);
+    border-width: 1px;
+    caret-color: rgb(107, 107, 107);
+    outline: none;
+}
+
+.css-c9hlmb {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: 3rem;
+}
+
+.css-1rk4czr {
+    margin: 0px;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    font-family: Inter, sans-serif;
+    color: rgb(107, 107, 107);
+    font-weight: 500;
+}
+
+.css-1xtytu2 {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    outline: 0px;
+    border: 0px;
+    margin: 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    line-height: 1;
+    font-family: Inter, sans-serif;
+    min-width: 64px;
+    border-radius: 8px;
+    box-shadow: none;
+    text-transform: none;
+    text-align: center;
+    font-size: 0.875rem;
+    height: 2.5rem;
+    color: rgb(12, 12, 12);
+    background-color: transparent;
+    padding: 5px 15px;
+    font-weight: 600;
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.css-v0perk {
+    margin: 0px;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    font-family: Inter, sans-serif;
+    color: rgb(16, 129, 232);
+    font-weight: 600;
+}
+
+.css-w0pj6f {
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    z-index: 0;
+    inset: 0px;
+    border-radius: inherit;
+}
+
+.css-15eji4e {
+    margin-top: 1.5rem;
+}
+
+.css-1524azj {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    outline: 0px;
+    border: 0px;
+    margin: 12px 0px 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    line-height: 1;
+    font-family: Inter, sans-serif;
+    min-width: 64px;
+    padding: 8px 22px;
+    border-radius: 8px;
+    width: 100%;
+    box-shadow: none;
+    text-transform: none;
+    text-align: center;
+    font-size: 1.125rem;
+    height: 3rem;
+    color: rgb(255, 255, 255);
+    background-color: rgb(16, 129, 232);
+    font-weight: 600;
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.css-w0pj6f {
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    z-index: 0;
+    inset: 0px;
+    border-radius: inherit;
+}
+
+.css-1524azj > * {
+    line-height: 1em;
+}
+
+.css-su0pk8 > div > div {
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+.css-hyrrih > div:first-of-type {
+    height: 3rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    display: flex;
+    gap: 1.25rem;
+}
+.css-1nmta51 {
+    margin: 0.25rem 0px 0px;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: rgb(255, 78, 78);
+    display: flex;
+    gap: 0.5em;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.css-r4x838 {
+    user-select: none;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    fill: currentcolor;
+    flex-shrink: 0;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-size: inherit;
+    color: inherit;
+}

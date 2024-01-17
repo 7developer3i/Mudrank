@@ -1,0 +1,1112 @@
+.css-1bcp6ex {
+    position: relative;
+    top: 65px;
+    background-color: white;
+}
+.css-93zre4 {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0px auto;
+    padding: 2rem 1rem;
+}
+
+.css-x58209 {
+    margin: 0px 0px 2rem;
+    font-weight: 600;
+    line-height: 1.2;
+    font-size: 1.25rem;
+    font-family: Baikal, Inter, sans-serif;
+    letter-spacing: -0.025em;
+    color: black;
+}
+
+.css-y7tq29 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+}
+
+.css-15kk3t0 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.css-48ovcp {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgb(230, 230, 230);
+}
+
+.css-1fluq40 {
+    padding: 1.75rem 4rem;
+    background-image: url('https://tykeinvest.com/build/_assets/get-started-bg-ROOWUXX5.svg');
+    background-size: cover;
+    background-position: right center;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.css-nnpmse {
+    margin: 0px 0px 0.5rem;
+    line-height: 1.2;
+    font-size: 1.25rem;
+    font-family: Baikal, Inter, sans-serif;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+    color: blue;
+}
+.css-1s33x73 {
+    margin: 0px 0px 1.5rem;
+    font-size: 1rem;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    font-family: Inter, sans-serif;
+    font-weight: bold;
+    color: rgb(11, 11, 11);
+}
+
+.css-15zum9u {
+    display: flex;
+    gap: 10px;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.css-ax41kz {
+    width: 100%;
+    height: 10px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(6, 31, 249, 0.37);
+}
+
+.css-1ukc29q {
+    margin: 0px;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    font-weight: 700;
+    color: black;
+}
+
+.css-1vy2mdc {
+    padding-top: 1.125rem;
+}
+
+.css-wepcvu {
+    margin: 0px 0px 10px;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    display: block;
+    text-transform: uppercase;
+    padding: 0px 1.5rem;
+}
+
+strong, b {
+    font-weight: 700;
+}
+.css-hv4oft {
+    padding: 1.125rem 1.5rem;
+    position: relative;
+    background-color: transparent;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.css-xvg28x {
+    display: flex;
+    gap: 1.25rem;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.css-17fleag {
+    padding: 1.25rem 1.125rem 0px;
+    border-bottom: 1px solid rgb(230, 230, 230);
+    border-top-color: rgb(230, 230, 230);
+    border-right-color: rgb(230, 230, 230);
+    border-left-color: rgb(230, 230, 230);
+}
+.css-shio53 {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 0.75rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgb(230, 230, 230);
+    border-top-color: rgb(230, 230, 230);
+    border-right-color: rgb(230, 230, 230);
+    border-left-color: rgb(230, 230, 230);
+}
+.css-1xp3lb7 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(16, 129, 232);
+    color: rgb(255, 255, 255);
+    display: grid;
+    place-items: center;
+}
+.css-1sdwumd {
+    user-select: none;
+    display: inline-block;
+    fill: currentcolor;
+    flex-shrink: 0;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-size: 1.71429rem;
+    width: 75%;
+    height: auto;
+}
+.css-1jmlw0h {
+    margin: 0px;
+    font-size: 1rem;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+    color: rgb(12, 12, 12);
+}
+.css-9r9fyo .MuiListItem-root {
+    padding: 0.5rem;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.css-16litsy {
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    outline: 0px;
+    border: 0px;
+    margin: 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    line-height: 1;
+    font-family: Inter, sans-serif;
+    min-width: 64px;
+    box-shadow: none;
+    text-transform: none;
+    text-align: center;
+    font-size: 0.875rem;
+    color: rgb(16, 129, 232);
+    background-color: transparent;
+    font-weight: 600;
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    padding: 18px;
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: unset;
+}
+
+.css-9r9fyo .MuiListItem-root .MuiTypography-subtitle {
+    color: rgb(97, 97, 97);
+}
+.css-1yaipng {
+    margin: 0px;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    font-weight: 500;
+    display: block;
+    word-break: break-word;
+    color: rgb(9, 9, 9) !important;
+}
+.css-jcxbta {
+    margin: 0px;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    word-break: break-all;
+}
+
+.css-9r9fyo:not(:last-of-type) {
+    border-bottom: 1px solid rgb(230, 230, 230);
+    border-radius: 0px;
+}
+.css-ntfpy7 {
+    padding: 0px;
+    margin: 0px;
+}
+.css-9r9fyo {
+    padding: 0.5rem;
+    list-style-type: none;
+    border-radius: 8px;
+    background: inherit;
+}
+.css-1z0orl0 {
+    -webkit-tap-highlight-color: transparent;
+    background-color: transparent;
+    outline: 0px;
+    border: 0px;
+    margin: 0px;
+    border-radius: 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    color: inherit;
+    display: flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+    padding: 8px 16px;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.css-ut1rgm {
+    width: 1.375rem;
+    height: 1.375rem;
+    min-width: 1.375rem;
+    min-height: 1.375rem;
+    border-radius: 50%;
+    background-color: rgb(23, 153, 66);
+    color: rgb(255, 255, 255);
+    display: grid;
+    place-items: center;
+    font-size: 0.5rem;
+}
+
+.css-r4x838 {
+    user-select: none;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    fill: currentcolor;
+    flex-shrink: 0;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-size: inherit;
+    color: inherit;
+}
+
+.css-44rzy9 {
+    margin: 0px;
+    font-size: 1rem;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+    color: rgb(58, 58, 58);
+    opacity: 0.5;
+}
+
+.css-kgwufi {
+    position: absolute;
+    bottom: 0px;
+    right: 1.5rem;
+    left: 4.5rem;
+    height: 1px;
+    background-color: rgb(230, 230, 230);
+}
+.css-1j9sm7k {
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 1.5rem 2rem;
+    position: relative;
+    background-image: url('https://tykeinvest.com/build/_assets/new-live-campaign-bg-L6QPYC7L.svg');
+    background-size: cover;
+}
+
+.css-ep7xq6 {
+    z-index: 1;
+    position: relative;
+}
+
+.css-1l8bgw1 {
+    margin: 0px;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    font-family: Inter, sans-serif;
+    display: block;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.css-1ny24za {
+    margin: 0px 0px 1.5rem;
+    line-height: 1.2;
+    font-size: 1.5rem;
+    font-family: Baikal, Inter, sans-serif;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+    color: rgb(70, 95, 193);
+    font-style: italic;
+}
+
+
+
+.css-1d4eaqo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 1.125rem 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent!important;
+}
+.css-12mhz1u {
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    padding: 1.125rem;
+    height: 124px;
+}
+
+.css-12e22q0 {
+    display: flex;
+    gap: 3rem;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.css-tb8qye {
+    display: flex;
+    gap: 0.5rem;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.css-1h696ep {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: rgb(250, 250, 250);
+}
+.css-1h696ep img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.css-k008qs {
+    display: flex;
+}
+.css-1ie4oys {
+    display: block;
+}
+.css-1f2dt57 {
+    max-width: 300px;
+    min-width: 100%;
+    overflow: unset;
+}
+.swiper {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
+.swiper-pointer-events {
+    touch-action: pan-y;
+}
+
+.css-1f2dt57 .swiper {
+    padding-bottom: 3.25rem;
+}
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
+}
+.swiper-backface-hidden .swiper-slide {
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.swiper-slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+}
+.hide_tap_highlight {
+    -webkit-tap-highlight-color: transparent!important;
+}
+
+.css-1uvyol9 {
+    width: 100%;
+}
+img.remix-image {
+    transition: .125s filter ease-in-out;
+    filter: blur(0px);
+}
+
+.css-1uvyol9 img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.css-1qcah87 {
+    display: none;
+}
+.css-umn9ab {
+    margin: 0px 0px 0.5rem;
+    font-size: 1rem;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    font-family: Inter, sans-serif;
+    font-weight: 800;
+}
+
+.css-a6rva7 {
+    width: 60%;
+}
+.css-1q8rt41 {
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 2rem 1.25rem;
+    background-color: rgb(247, 243, 235);
+    border: 1px solid rgb(243, 243, 243);
+    position: relative;
+    z-index: -1;
+}
+.css-1ezyabs {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.css-7f1xqy {
+    margin: 0px 0px 1.25rem;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    display: block;
+    font-weight: 500;
+    color: rgb(107, 107, 107);
+}
+.css-ae2p2s {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.css-1tn28th {
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 8px;
+    padding: 6px 10px;
+}
+
+.css-1sp4j3f {
+    margin: 0px;
+    font-size: 0.6875rem;
+    line-height: 1.5;
+    display: block;
+    font-weight: 500;
+}
+
+.css-1tn28th {
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 8px;
+    padding: 6px 10px;
+}
+
+.css-1sp4j3f {
+    margin: 0px;
+    font-size: 0.6875rem;
+    line-height: 1.5;
+    display: block;
+    font-weight: 500;
+}
+.css-k008qs {
+    display: flex;
+}
+.css-1lyfgzg {
+    margin-left: auto;
+}
+.css-y1h5se {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    outline: 0px;
+    border: 0px;
+    margin: 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    line-height: 1;
+    font-family: Inter, sans-serif;
+    min-width: 64px;
+    border-radius: 8px;
+    box-shadow: none;
+    text-transform: none;
+    text-align: center;
+    font-size: 0.875rem;
+    height: 2.5rem;
+    color: rgb(16, 129, 232);
+    background-color: transparent;
+    padding: 5px 15px;
+    font-weight: 600;
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.css-1f2k2gl {
+    margin-left: 0.5rem;
+}
+
+.css-y1h5se > * {
+    line-height: 1em;
+}
+.css-y1h5se svg {
+    font-size: inherit;
+    color: inherit;
+    transform-origin: center center;
+}
+
+.css-7822g1 {
+    width: 90%;
+}
+
+.css-1cw4hi4 {
+    user-select: none;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    fill: currentcolor;
+    flex-shrink: 0;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-size: inherit;
+}
+.css-68lgj1 {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    outline: 0px;
+    margin: 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    line-height: 1;
+    font-family: Inter, sans-serif;
+    min-width: 64px;
+    border-radius: 8px;
+    text-transform: none;
+    text-align: center;
+    color: rgb(16, 129, 232);
+    padding: 5px 15px;
+    font-weight: 600;
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(206, 206, 206);
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 7px 0px;
+    width: 100%;
+    font-size: 0.9rem;
+    height: 42px;
+}
+
+.css-68lgj1 > * {
+    line-height: 1em;
+}
+.css-1ezyabs {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.css-w0pj6f {
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    z-index: 0;
+    inset: 0px;
+    border-radius: inherit;
+}
+.css-1t4w7bp {
+    padding: 1.125rem 1.5rem;
+    position: relative;
+    background-color: rgba(255, 216, 52, 0.1);
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.css-xvg28x {
+    display: flex;
+    gap: 1.25rem;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.css-1q10um7 {
+    width: 1.375rem;
+    height: 1.375rem;
+    min-width: 1.375rem;
+    min-height: 1.375rem;
+    border-radius: 50%;
+    background-color: rgb(238, 149, 0);
+    color: rgb(255, 255, 255);
+    display: grid;
+    place-items: center;
+    font-size: 0.75rem;
+}
+.css-r4x838 {
+    user-select: none;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    fill: currentcolor;
+    flex-shrink: 0;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-size: inherit;
+    color: inherit;
+}
+.css-1xkxmnm {
+    margin: 0px;
+    font-size: 1rem;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+    color: rgb(58, 58, 58);
+    opacity: 1;
+}
+.css-1lgpsmy {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 0.5rem;
+    padding-left: 2.625rem;
+    width: 30rem;
+}
+.css-193la16 {
+    margin: 0px;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: rgb(107, 107, 107);
+    font-weight: 500;
+    display: block;
+}
+.css-cdqi1 {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    outline: 0px;
+    border: 0px;
+    margin: 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    line-height: 1;
+    font-family: Inter, sans-serif;
+    min-width: 64px;
+    padding: 6px 16px;
+    border-radius: 8px;
+    box-shadow: none;
+    text-transform: none;
+    text-align: center;
+    font-size: 0.875rem;
+    color: rgb(255, 255, 255);
+    background-color: rgb(16, 129, 232);
+    font-weight: 600;
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    height: 42px;
+    width: 153px;
+}
+.css-xvg28x {
+    display: flex;
+    gap: 1.25rem;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.css-1xku8md {
+    margin-top: var(--inner-navbar-height);
+}
+.css-jt4zb0 {
+    padding: 2rem 0px;
+}
+
+.css-1jyx3tm {
+    width: 100%;
+    margin-left: auto;
+    box-sizing: border-box;
+    margin-right: auto;
+    display: block;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.css-72rnjc {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: end;
+    align-items: end;
+}
+.css-149omup {
+    margin: 0px 0px 0.2rem;
+    line-height: 1.2;
+    font-size: 2rem;
+    font-family: Baikal, Inter, sans-serif;
+    letter-spacing: -0.045em;
+    font-weight: 700;
+}
+.css-1tgnzch {
+    padding-top: 1rem;
+}
+
+
+.css-plm54p {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    z-index: 1;
+}
+.css-1781s87 {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 1rem;
+    white-space: nowrap;
+}
+.css-1781s87 > div {
+    border: transparent;
+}
+.css-n0lojc .MuiInputBase-root {
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.css-plm54p .MuiInputBase-root {
+    width: 12.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgb(58, 58, 58);
+    height: 2.5rem;
+}
+.css-1ryi2sc {
+    line-height: 1.4375em;
+    font-size: 1.125rem;
+    letter-spacing: -0.01em;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    color: rgb(12, 12, 12);
+    box-sizing: border-box;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.css-18a5ecr.css-18a5ecr.css-18a5ecr {
+    padding-right: 32px;
+}
+
+
+.css-18a5ecr.MuiSelect-select {
+    height: auto;
+    min-height: 1.4375em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.css-1781s87 .MuiSelect-select {
+    width: 12.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgb(58, 58, 58);
+}
+
+.css-18a5ecr {
+    appearance: none;
+    user-select: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font: inherit;
+    letter-spacing: inherit;
+    color: currentcolor;
+    border: 0px;
+    box-sizing: content-box;
+    background: none;
+    height: 1.4375em;
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    display: block;
+    min-width: 0px;
+    width: 100%;
+    animation-name: mui-auto-fill-cancel;
+    animation-duration: 10ms;
+    padding: 16.5px 14px;
+}
+.css-n0lojc input + div {
+    pointer-events: none;
+    position: absolute;
+    right: 0px;
+}
+
+.css-zwon7b {
+    transform: rotate(0deg);
+    transform-origin: center center;
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    cursor: pointer;
+}
+.css-zwon7b svg {
+    font-size: 0.65rem;
+    margin-right: 0.9375rem;
+    cursor: pointer;
+}
+
+.css-igs3ac {
+    text-align: left;
+    position: absolute;
+    inset: -5px 0px 0px;
+    margin: 0px;
+    padding: 0px 8px;
+    pointer-events: none;
+    border-radius: inherit;
+    border-style: solid;
+    border-width: 1px;
+    overflow: hidden;
+    min-width: 0%;
+    border-color: rgba(0, 0, 0, 0.23);
+}
+.css-ihdtdm {
+    float: unset;
+    width: auto;
+    overflow: hidden;
+    padding: 0px;
+    line-height: 11px;
+    transition: width 150ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+}
+.css-1781s87 > div {
+    border: transparent;
+}
+.css-t57bhc {
+    position: relative;
+    display: inline-block;
+    min-width: 200px;
+    width: 100%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(189, 189, 189);
+    border-radius: 8px;
+    transition: border-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-size: 0.875rem;
+    color: rgb(158, 158, 158);
+    height: 40px;
+}
+.css-1781s87 button {
+    font-weight: 500;
+    color: rgb(58, 58, 58);
+}
+
+.css-uqbpx5 {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    outline: 0px;
+    border: 0px;
+    margin: 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    line-height: 1;
+    font-family: Inter, sans-serif;
+    min-width: 64px;
+    border-radius: 8px;
+    box-shadow: none;
+    text-transform: none;
+    text-align: center;
+    background-color: transparent;
+    padding: 5px 15px;
+    font-weight: 600;
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    gap: 3rem;
+    height: 100%;
+    width: 100%;
+    font-size: inherit;
+    color: inherit;
+}
+.css-62h4w {
+    display: grid;
+    place-items: center;
+    font-size: 0.75em;
+    color: inherit;
+    transform: rotate(0deg);
+    transform-origin: center center;
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.css-uqbpx5 svg {
+    font-size: inherit;
+    color: inherit;
+    transform-origin: center center;
+}
+.css-rqs7wq {
+    width: 100%;
+}
+.css-rqs7wq > div {
+    width: 100%;
+    margin: 0px !important;
+}
+.css-15w7drz {
+    display: grid;
+    place-items: center;
+    font-size: inherit;
+    color: rgb(206, 206, 206);
+    transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    position: absolute;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    cursor: default;
+}
+.css-r4x838 {
+    user-select: none;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    fill: currentcolor;
+    flex-shrink: 0;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-size: inherit;
+    color: inherit;
+}
+.css-rqs7wq input {
+    width: 43rem;
+}
+
+.css-1hcd34a {
+    padding: 1em;
+    margin: 0px;
+    width: 100%;
+    max-height: 45vh;
+    border-radius: 8px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.08) 4px 4px 16px 0px;
+    font-size: 0.875rem;
+    list-style: none;
+    outline: 0px;
+    transition: opacity 0.2s ease 0.25s, visibility 0.2s step-end 0.25s;
+    overflow: hidden auto;
+}
+.css-kjt2jl:not(:last-of-type) {
+    margin-bottom: 0.5rem;
+}
+.css-kjt2jl {
+    padding: 0.5em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    font-size: inherit;
+    line-height: 1em;
+    color: inherit;
+    transition: background-color 100ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 100ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.css-plm54p input {
+    width: 15.625rem;
+    background: rgb(248, 249, 250);
+    border: 0.5px solid rgb(236, 236, 236);
+    height: 2.5rem;
+}
+
+.css-fa4rfl {
+    padding: 0px 1rem 0px 3rem;
+    width: 100%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    font-style: inherit;
+    font-variant: inherit;
+    font-weight: inherit;
+    font-stretch: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    font-optical-sizing: inherit;
+    font-kerning: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    font-size: 0.875rem;
+    color: rgb(12, 12, 12);
+    border-radius: 8px;
+    border-style: solid;
+    border-color: rgb(206, 206, 206);
+    border-width: 1px;
+    background: rgb(255, 255, 255);
+    caret-color: rgb(107, 107, 107);
+    outline: none;
+    transition: border-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    height: 50px;
+}
+.css-djswmo {
+    position: relative;
+    margin-bottom: 1rem;
+    display: block;
+    width: 100%;
+}
+.css-r4x838 {
+    user-select: none;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    fill: currentcolor;
+    flex-shrink: 0;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-size: inherit;
+    color: inherit;
+}
+.css-uqbpx5 > * {
+    line-height: 1em;
+}
