@@ -1,59 +1,94 @@
-// import React, { useEffect, useState } from 'react';
-// import QRCode from 'qrcode.react';
-// import solanaweb3 from "@solana/web3.js";
-// import bs58 from "bs58";
+// SolanaTransfer.js
 
-// const Solana = () => {
-//   const [transactionHash, setTransactionHash] = useState('');
+import React, { useState } from 'react';
+import { Connection, Transaction, sendAndConfirmTransaction, SystemProgram, Account, PublicKey } from '@solana/web3.js';
+import { Button, Form, Container, Row, Col } from 'react-bootstrap';
+import QRCode from 'qrcode.react';
 
-//   const generateTransaction = async () => {
-//     const connection = new solanaweb3.Connection("https://api.devnet.solana.com");
+const SolanaTransfer = () => {
+  const [recipientAddress, setRecipientAddress] = useState('');
+  const [amount, setAmount] = useState('');
+  const [qrCodeData, setQrCodeData] = useState('');
 
-//     const senderWallet = solanaweb3.Keypair.fromSecretKey(
-//       bs58.decode(
-//         "3wEPRLwcAEVpdd39iugcLwzTXBrxrnMkroScEydXiEW6kYJsAy1rEMB7A1RGanvVBfE87P49VoNB834PezxRHw4j"
-//       )
-//     );
+  const handlePayment = async () => {
+    try {
+      // Create a connection to the Solana network
+      const connection = new Connection('https://api.mainnet-beta.solana.com');
 
-//     const receiverWallet = solanaweb3.Keypair.fromSecretKey(
-//       bs58.decode(
-//         "3D6MduBjSxysVA8HviK9fzLCfEhVaQh7ZP9HPP82Ny9592BFkH5QVp4YJgEQ7TiVaAVG9XTyDiqZBUoKKAVNN8hu"
-//       )
-//     );
+      // Replace with your Solana wallet private key
+      const privateKey = '4QehXGxszDt5nYL4ZzJWtjhkQCvWxf2xdTxoJ3CPuainkWLc3HwUwkdzCZJwz6cqY4mDCceSFY9EMPJxnP4mRaSp';
 
-//     let transaction = new solanaweb3.Transaction().add(
-//       solanaweb3.SystemProgram.transfer({
-//         fromPubkey: senderWallet.publicKey,
-//         toPubkey: receiverWallet.publicKey,
-//         lamports: 2 * solanaweb3.LAMPORTS_PER_SOL,
-//       })
-//     );
-//     transaction.feePayer = senderWallet.publicKey;
+      // Create a Solana keypair
+      const wallet = new Account(Buffer.from(privateKey, 'hex'));
 
-//     try {
-//       const signature = await connection.sendTransaction(transaction, [senderWallet, receiverWallet]);
-//       console.log(`Transaction sent: ${signature}`);
-//       setTransactionHash(signature);
-//     } catch (error) {
-//       console.error('Error sending transaction', error);
-//     }
-//   };
+      // Get the public key of the recipient
+      const recipientPublicKey = new PublicKey(recipientAddress);
 
-//   useEffect(() => {
-//     generateTransaction();
-//   }, []); // Run once on component mount
+      // Create a token transfer transaction
+      const transaction = new Transaction().add(
+        SystemProgram.transfer({
+          fromPubkey: wallet.publicKey,
+          toPubkey: recipientPublicKey,
+          lamports: amount * 1000000000, 
+        })
+      );
 
-//   return (
-//     <div>
-//       <h1>Solana Transaction QR Code</h1>
-//       {transactionHash && (
-//         <>
-//           <p>Transaction Hash: {transactionHash}</p>
-//           <QRCode value={transactionHash} />
-//         </>
-//       )}
-//     </div>
-//   );
-// };
+      // Sign and send the transaction
+      await sendAndConfirmTransaction(connection, transaction, [wallet]);
 
-// export default Solana;
+      const qrData = JSON.stringify({
+        recipientAddress,
+        amount,
+        privateKey,
+      });
+
+      setQrCodeData(qrData);
+    } catch (error) {
+      console.error('Payment failed:', error);
+    }
+  };
+
+  return (
+    <Container>
+      <Row>
+        <Col>
+          <Form>
+            <Form.Group>
+              <Form.Label>Recipient Address</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter recipient address"
+                value={recipientAddress}
+                onChange={(e) => setRecipientAddress(e.target.value)}
+              />
+            </Form.Group>
+
+            <Form.Group>
+              <Form.Label>Amount</Form.Label>
+              <Form.Control
+                type="number"
+                placeholder="Enter amount"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+              />
+            </Form.Group>
+
+            <Button variant="primary" onClick={handlePayment}>
+              Generate QR Code
+            </Button>
+          </Form>
+        </Col>
+        <Col>
+          {!qrCodeData && (
+            <div>
+              <h5>Scan this QR code with your Solana wallet:</h5>
+              <QRCode value={qrCodeData} />
+            </div>
+          )}
+        </Col>
+      </Row>
+    </Container>
+  );
+};
+
+export default SolanaTransfer;

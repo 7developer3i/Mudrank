@@ -19,7 +19,6 @@ export const fetchAboutDetailsAsync = createAsyncThunk(
   "about/fetchAboutDetails",
   async ({ token, adminid }) => {
     const response = await fetchAboutDetails({ token, adminid });
-    // The value we return becomes the `fulfilled` action payload
     return response.data;
   }
 );

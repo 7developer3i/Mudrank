@@ -7,7 +7,16 @@ const axios = require("axios"); // Import axios
 const rateLimit = require("express-rate-limit");
 const investorController = require("./privacyFunction");
 const bcrypt = require("bcrypt");
-const { Connection, clusterApiUrl, PublicKey, Transaction, sendAndConfirmTransaction, SystemProgram } = require('@solana/web3.js');
+const Razorpay = require('razorpay');
+const crypto = require("crypto")
+const {
+  Connection,
+  clusterApiUrl,
+  PublicKey,
+  Transaction,
+  sendAndConfirmTransaction,
+  SystemProgram
+} = require('@solana/web3.js');
 const QRCode = require('qrcode');
 
 
@@ -31,12 +40,16 @@ const apiLimiter = rateLimit({
 router.get("/test", async (req, res) => {
   try {
     const test = await investorController.fetchInvestorData(req, res);
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
     res
       .status(error.status || 500)
-      .json({ error: error.error || "Internal Server Error" });
+      .json({
+        error: error.error || "Internal Server Error"
+      });
   }
 });
 
@@ -78,7 +91,11 @@ const transporter = nodemailer.createTransport({
 });
 
 router.post("/email", (req, res) => {
-  const { to, subject, text } = req.body;
+  const {
+    to,
+    subject,
+    text
+  } = req.body;
 
   const mailOptions = {
     from: "33front.end@gmail.com", // Sender's email address
@@ -90,15 +107,21 @@ router.post("/email", (req, res) => {
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.error("Error sending email: ", error);
-      res.status(500).json({ error: "Error sending email" });
+      res.status(500).json({
+        error: "Error sending email"
+      });
     } else {
       console.log("Email sent: " + info.response);
-      res.json({ success: "Email sent successfully" });
+      res.json({
+        success: "Email sent successfully"
+      });
     }
   });
 });
 
-const upload = multer({ storage });
+const upload = multer({
+  storage
+});
 
 router.post("/upload/:id", upload.single("files"), (req, res) => {
   const id = req.params.id; // Extract the ID from the URL parameter
@@ -109,10 +132,14 @@ router.post("/upload/:id", upload.single("files"), (req, res) => {
     connection.query(updateQuery, [req.file.path, id], (error, results) => {
       if (error) {
         console.error("Error updating data: " + error);
-        res.status(500).json({ error: "Error updating data" });
+        res.status(500).json({
+          error: "Error updating data"
+        });
       } else {
         console.log("Updated the record with ID: " + id);
-        res.status(200).json({ message: "File Uploaded Successfully" });
+        res.status(200).json({
+          message: "File Uploaded Successfully"
+        });
       }
     });
   } catch (error) {
@@ -126,42 +153,58 @@ router.post("/upload/:id", upload.single("files"), (req, res) => {
 router.post("/privacy", async (req, res) => {
   try {
     const test = await investorController.fetchcreatePrivacyData(req, res);
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
 router.get("/privacy", async (req, res) => {
   try {
     const test = await investorController.fetchPrivacyData(req, res);
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
     res
       .status(error.status || 500)
-      .json({ error: error.error || "Internal Server Error" });
+      .json({
+        error: error.error || "Internal Server Error"
+      });
   }
 });
 
 router.put("/privacy/:id", async (req, res) => {
   try {
     const test = await investorController.fetcheditPrivacyData(req, res);
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
 router.delete("/privacy/:id", async (req, res) => {
   try {
     const test = await investorController.fetchDeletePrivacyData(req, res);
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
@@ -170,40 +213,56 @@ router.delete("/privacy/:id", async (req, res) => {
 router.post("/about", upload.single("files"), async (req, res) => {
   try {
     const test = await investorController.fetchcreateaboutData(req, res);
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
 router.get("/about", async (req, res) => {
   try {
     const test = await investorController.fetchaboutData(req, res);
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
 router.put("/about", upload.single("files"), async (req, res) => {
   try {
     const test = await investorController.fetcheditaboutData(req, res);
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
 router.delete("/about/:id", async (req, res) => {
   try {
     const test = await investorController.fetchdeleteaboutData(req, res);
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
@@ -212,40 +271,56 @@ router.delete("/about/:id", async (req, res) => {
 router.post("/startup", upload.single("files"), async (req, res) => {
   try {
     const test = await investorController.fetchcreateStartupData(req, res);
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
 router.get("/startup", async (req, res) => {
   try {
     const test = await investorController.fetchStartupData(req, res);
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
 router.put("/startup", upload.single("files"), async (req, res) => {
   try {
     const test = await investorController.fetcheditStartupData(req, res);
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
 router.delete("/startup/:id", async (req, res) => {
   try {
     const test = await investorController.fetchdeleteStartupData(req, res);
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
@@ -253,40 +328,56 @@ router.delete("/startup/:id", async (req, res) => {
 router.get("/fundraising", async (req, res) => {
   try {
     const test = await investorController.fetchfundraisingData(req, res);
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
 router.post("/fundraising", upload.single("files"), async (req, res) => {
   try {
     const test = await investorController.fetchcreatefundraisingData(req, res);
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
 router.put("/fundraising", upload.single("files"), async (req, res) => {
   try {
     const test = await investorController.fetcheditfundraisingData(req, res);
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
 router.delete("/fundraising/:id", async (req, res) => {
   try {
     const test = await investorController.fetchDeletefundraisingData(req, res);
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
@@ -297,7 +388,9 @@ router.post("/browse", (req, res) => {
   const query = "SELECT * FROM user WHERE id = ?";
   connection.query(query, [data.adminid], (err, result) => {
     if (err) {
-      res.status(500).json({ error: "Failed to fetch investors" });
+      res.status(500).json({
+        error: "Failed to fetch investors"
+      });
     }
     if (result[0].token == data.token) {
       const insertQuery = `INSERT INTO browse_Table (describe_item, title, created_date, is_deleted, status) VALUES (?, ?, NOW(), ?, ?)`;
@@ -307,7 +400,9 @@ router.post("/browse", (req, res) => {
         (error, results) => {
           if (error) {
             console.error("Error inserting data: " + error);
-            res.status(500).json({ error: "Error inserting data" });
+            res.status(500).json({
+              error: "Error inserting data"
+            });
           } else {
             if (results.insertId) {
               const insertQuery = `INSERT INTO frequently_table (browse_id, question, answer, created_date, is_deleted, status) VALUES (?, ?, ?, NOW(), ?, ?)`;
@@ -317,9 +412,13 @@ router.post("/browse", (req, res) => {
                 (error, result) => {
                   if (error) {
                     console.error("Error inserting data: " + error);
-                    res.status(500).json({ error: "Error inserting data" });
+                    res.status(500).json({
+                      error: "Error inserting data"
+                    });
                   } else {
-                    res.status(200).json({ message: "Inserted a record" });
+                    res.status(200).json({
+                      message: "Inserted a record"
+                    });
                   }
                 }
               );
@@ -328,7 +427,9 @@ router.post("/browse", (req, res) => {
         }
       );
     } else {
-      res.status(400).json({ message: "missing token" });
+      res.status(400).json({
+        message: "missing token"
+      });
     }
   });
 });
@@ -347,9 +448,13 @@ router.get("/card/:id", (req, res) => {
   connection.query(query, [cardId], (error, results) => {
     if (error) {
       console.error("Error fetching data: " + error);
-      res.status(500).json({ error: "Error fetching data" });
+      res.status(500).json({
+        error: "Error fetching data"
+      });
     } else if (results.length === 0) {
-      res.status(404).json({ error: "Card not found" });
+      res.status(404).json({
+        error: "Card not found"
+      });
     } else {
       const cardData = results[0]; // Assuming that there's only one matching record
       res.status(200).json(cardData);
@@ -365,7 +470,9 @@ router.put("/card/:id", (req, res) => {
   connection.beginTransaction((err) => {
     if (err) {
       console.error("Error starting transaction: " + err);
-      res.status(500).json({ error: "Error starting transaction" });
+      res.status(500).json({
+        error: "Error starting transaction"
+      });
       return;
     }
 
@@ -383,7 +490,9 @@ router.put("/card/:id", (req, res) => {
         if (error) {
           connection.rollback(() => {
             console.error("Error updating browse_Table: " + error);
-            res.status(500).json({ error: "Error updating browse_Table" });
+            res.status(500).json({
+              error: "Error updating browse_Table"
+            });
           });
         } else {
           // Update the frequently_table
@@ -402,7 +511,9 @@ router.put("/card/:id", (req, res) => {
                   console.error("Error updating frequently_table: " + error);
                   res
                     .status(500)
-                    .json({ error: "Error updating frequently_table" });
+                    .json({
+                      error: "Error updating frequently_table"
+                    });
                 });
               } else {
                 // Commit the transaction if both updates are successful
@@ -412,13 +523,17 @@ router.put("/card/:id", (req, res) => {
                       console.error("Error committing transaction: " + err);
                       res
                         .status(500)
-                        .json({ error: "Error committing transaction" });
+                        .json({
+                          error: "Error committing transaction"
+                        });
                     });
                   } else {
                     console.log("Transaction successfully completed.");
                     res
                       .status(200)
-                      .json({ message: "Record updated successfully" });
+                      .json({
+                        message: "Record updated successfully"
+                      });
                   }
                 });
               }
@@ -435,7 +550,9 @@ router.delete("/browse/:id", (req, res) => {
   const query = "SELECT * FROM user WHERE id = ?";
   connection.query(query, [req.query.adminid], (err, result) => {
     if (err) {
-      res.status(500).json({ error: "Failed to fetch investors" });
+      res.status(500).json({
+        error: "Failed to fetch investors"
+      });
       return;
     }
     const cardId = req.params.id;
@@ -444,7 +561,9 @@ router.delete("/browse/:id", (req, res) => {
       connection.beginTransaction((err) => {
         if (err) {
           console.error("Error starting transaction: " + err);
-          res.status(500).json({ error: "Error starting transaction" });
+          res.status(500).json({
+            error: "Error starting transaction"
+          });
           return;
         }
 
@@ -457,7 +576,9 @@ router.delete("/browse/:id", (req, res) => {
               console.error("Error deleting describe_item and title: " + error);
               res
                 .status(500)
-                .json({ error: "Error deleting describe_item and title" });
+                .json({
+                  error: "Error deleting describe_item and title"
+                });
             });
           } else {
             // Commit the transaction if the deletion is successful
@@ -481,14 +602,20 @@ router.delete("/browse/:id", (req, res) => {
             connection.query(deleteQuery, [cardId], (error, results) => {
               if (error) {
                 console.error("Error deleting data: " + error);
-                res.status(500).json({ error: "Error deleting data" });
+                res.status(500).json({
+                  error: "Error deleting data"
+                });
               } else {
                 if (results.affectedRows === 0) {
-                  res.status(404).json({ error: "Record not found" });
+                  res.status(404).json({
+                    error: "Record not found"
+                  });
                 } else {
                   res
                     .status(200)
-                    .json({ message: "Deleted the four items in record" });
+                    .json({
+                      message: "Deleted the four items in record"
+                    });
                 }
               }
             });
@@ -496,7 +623,9 @@ router.delete("/browse/:id", (req, res) => {
         });
       });
     } else {
-      res.status(400).json({ message: "missing token" });
+      res.status(400).json({
+        message: "missing token"
+      });
     }
   });
 });
@@ -508,7 +637,9 @@ router.delete("/question/:id", (req, res) => {
   connection.beginTransaction((err) => {
     if (err) {
       console.error("Error starting transaction: " + err);
-      res.status(500).json({ error: "Error starting transaction" });
+      res.status(500).json({
+        error: "Error starting transaction"
+      });
       return;
     }
 
@@ -525,7 +656,9 @@ router.delete("/question/:id", (req, res) => {
             console.error("Error deleting question and answer: " + error);
             res
               .status(500)
-              .json({ error: "Error deleting question and answer" });
+              .json({
+                error: "Error deleting question and answer"
+              });
           });
         } else {
           // Commit the transaction if the deletion is successful
@@ -533,13 +666,17 @@ router.delete("/question/:id", (req, res) => {
             if (err) {
               connection.rollback(() => {
                 console.error("Error committing transaction: " + err);
-                res.status(500).json({ error: "Error committing transaction" });
+                res.status(500).json({
+                  error: "Error committing transaction"
+                });
               });
             } else {
               console.log("Transaction successfully completed.");
               res
                 .status(200)
-                .json({ message: "Question and answer deleted successfully" });
+                .json({
+                  message: "Question and answer deleted successfully"
+                });
             }
           });
         }
@@ -551,20 +688,28 @@ router.delete("/question/:id", (req, res) => {
 router.get("/browse", async (req, res) => {
   try {
     const test = await investorController.fetchbrowseData(req, res);
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
 router.put("/browse/:id", async (req, res) => {
   try {
     const test = await investorController.fetcheditbrowseData(req, res);
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
@@ -574,10 +719,14 @@ router.post("/faq", async (req, res) => {
   try {
     const test = await investorController.fetchcreatefaqData(req, res);
 
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
@@ -585,10 +734,14 @@ router.get("/faq", async (req, res) => {
   try {
     const test = await investorController.fetchfaqData(req, res);
 
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
@@ -596,10 +749,14 @@ router.put("/faq/:id", async (req, res) => {
   try {
     const test = await investorController.fetcheditfaqData(req, res);
 
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
@@ -607,10 +764,14 @@ router.delete("/faq/:id", async (req, res) => {
   try {
     const test = await investorController.fetchdeletefaqData(req, res);
     //
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
@@ -620,10 +781,14 @@ router.post("/freq", async (req, res) => {
   try {
     const test = await investorController.fetchcreatefreqData(req, res);
 
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
@@ -631,10 +796,14 @@ router.get("/freq", async (req, res) => {
   try {
     const test = await investorController.fetchfreqData(req, res);
 
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
@@ -642,10 +811,14 @@ router.put("/freq/:id", async (req, res) => {
   try {
     const test = await investorController.fetcheditfreqData(req, res);
 
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
@@ -653,10 +826,14 @@ router.delete("/freq/:id", async (req, res) => {
   try {
     const test = await investorController.fetchdeletefreqData(req, res);
 
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
@@ -665,10 +842,14 @@ router.post("/footer_data", async (req, res) => {
   try {
     const test = await investorController.fetchcreatefooterData(req, res);
 
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
@@ -676,10 +857,14 @@ router.get("/footer_data", async (req, res) => {
   try {
     const test = await investorController.fetchfooterData(req, res);
 
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
@@ -687,10 +872,14 @@ router.put("/footerdata/:id", async (req, res) => {
   try {
     const test = await investorController.fetcheditfooterData(req, res);
 
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
@@ -698,10 +887,14 @@ router.delete("/footerdata/:id", async (req, res) => {
   try {
     const test = await investorController.fetchdeletefooterData(req, res);
 
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
@@ -711,10 +904,14 @@ router.post("/sendHtmlAndSave", async (req, res) => {
   try {
     const test = await investorController.fetchcreatesendhtmlData(req, res);
 
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
@@ -722,10 +919,14 @@ router.get("/sendHtmlAndSave", async (req, res) => {
   try {
     const test = await investorController.fetchsendhtmlData(req, res);
 
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
@@ -733,10 +934,14 @@ router.put("/sendHtmlAndSave/:id", async (req, res) => {
   try {
     const test = await investorController.fetcheditsendhtmlData(req, res);
 
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
@@ -797,12 +1002,16 @@ router.post("/raise", upload.single("files"), (req, res) => {
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
           console.error("Error sending email: " + error);
-          res.status(500).json({ error: "Internal Server Error" });
+          res.status(500).json({
+            error: "Internal Server Error"
+          });
         } else {
           console.log("Email sent: " + info.response);
           res
             .status(200)
-            .json({ message: "Data inserted successfully. Email sent." });
+            .json({
+              message: "Data inserted successfully. Email sent."
+            });
         }
       });
     }
@@ -810,15 +1019,21 @@ router.post("/raise", upload.single("files"), (req, res) => {
     connection.query(insertQuery, values, (err, results) => {
       if (err) {
         console.error("Error inserting data into the database: " + err);
-        res.status(500).json({ error: "Internal Server Error" });
+        res.status(500).json({
+          error: "Internal Server Error"
+        });
       } else {
         console.log("Data inserted successfully");
-        res.status(200).json({ message: "Data inserted successfully" });
+        res.status(200).json({
+          message: "Data inserted successfully"
+        });
       }
     });
   } catch (error) {
     console.error("Error occurred:", error);
-    res.status(500).json({ error: "An error occurred" });
+    res.status(500).json({
+      error: "An error occurred"
+    });
   }
 });
 
@@ -829,7 +1044,9 @@ router.get("/raise", (req, res) => {
     connection.query(selectQuery, (err, results) => {
       if (err) {
         console.error("Error fetching data from the database: " + err);
-        res.status(500).json({ error: "Internal Server Error" });
+        res.status(500).json({
+          error: "Internal Server Error"
+        });
       } else {
         console.log("Data retrieved successfully");
         res.status(200).json(results);
@@ -837,7 +1054,9 @@ router.get("/raise", (req, res) => {
     });
   } catch (error) {
     console.error("Error occurred:", error);
-    res.status(500).json({ error: "An error occurred" });
+    res.status(500).json({
+      error: "An error occurred"
+    });
   }
 });
 
@@ -854,16 +1073,22 @@ router.put("/raise/:id", (req, res) => {
       (err, results) => {
         if (err) {
           console.error("Error updating data in the database: " + err);
-          res.status(500).json({ error: "Internal Server Error" });
+          res.status(500).json({
+            error: "Internal Server Error"
+          });
         } else {
           console.log("Data updated successfully");
-          res.status(200).json({ message: "Data updated successfully" });
+          res.status(200).json({
+            message: "Data updated successfully"
+          });
         }
       }
     );
   } catch (error) {
     console.error("Error occurred:", error);
-    res.status(500).json({ error: "An error occurred" });
+    res.status(500).json({
+      error: "An error occurred"
+    });
   }
 });
 
@@ -875,19 +1100,27 @@ router.delete("/raise/:id", (req, res) => {
     connection.query(deleteQuery, [id], (error, results) => {
       if (error) {
         console.error("Error deleting data: " + error);
-        res.status(500).json({ error: "Error deleting data" });
+        res.status(500).json({
+          error: "Error deleting data"
+        });
       } else {
         if (results.affectedRows === 0) {
-          res.status(404).json({ error: "Record not found" });
+          res.status(404).json({
+            error: "Record not found"
+          });
         } else {
           console.log("Deleted the record with ID: " + id);
-          res.status(200).json({ message: "Deleted the record" });
+          res.status(200).json({
+            message: "Deleted the record"
+          });
         }
       }
     });
   } catch (error) {
     console.error("Error occurred:", error);
-    res.status(500).json({ error: "An error occurred" });
+    res.status(500).json({
+      error: "An error occurred"
+    });
   }
 });
 
@@ -896,20 +1129,28 @@ router.post("/mission", async (req, res) => {
   try {
     const test = await investorController.fechcreatemissionData(req, res);
 
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
 router.get("/mission", async (req, res) => {
   try {
     const test = await investorController.fetchmissionData(req, res);
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
@@ -917,10 +1158,14 @@ router.put("/mission/:id", async (req, res) => {
   try {
     const test = await investorController.fetcheditmissionData(req, res);
 
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
@@ -929,10 +1174,14 @@ router.post("/curated", async (req, res) => {
   try {
     const test = await investorController.fetchcreatecuratedData(req, res);
 
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
@@ -940,10 +1189,14 @@ router.get("/curated", async (req, res) => {
   try {
     const test = await investorController.fetchcuratedData(req, res);
 
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
@@ -951,10 +1204,14 @@ router.put("/curated/:id", async (req, res) => {
   try {
     const test = await investorController.fetcheditcuatedData(req, res);
 
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
@@ -962,10 +1219,14 @@ router.delete("/curated/:id", async (req, res) => {
   try {
     const test = await investorController.fetchdeletecuratedData(req, res);
 
-    res.status(test.status).json(test.data || { message: test.message });
+    res.status(test.status).json(test.data || {
+      message: test.message
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
@@ -980,15 +1241,21 @@ router.post("/imagedata", upload.single("files"), (req, res) => {
     connection.query(insertQuery, [req.file.path], (error, results) => {
       if (error) {
         console.error("Error inserting data: " + error);
-        res.status(500).json({ error: "Error inserting data" });
+        res.status(500).json({
+          error: "Error inserting data"
+        });
       } else {
         console.log("Inserted a record with ID: " + results.insertId);
-        res.status(200).json({ message: "Inserted a record" });
+        res.status(200).json({
+          message: "Inserted a record"
+        });
       }
     });
   } catch (error) {
     console.error("Error in POST /imagedata: " + error);
-    res.status(500).json({ error: "Internal server error" });
+    res.status(500).json({
+      error: "Internal server error"
+    });
   }
 });
 
@@ -997,14 +1264,18 @@ router.get("/imagedata", (req, res) => {
     connection.query("SELECT * FROM imagetwo_table", (err, results, fields) => {
       if (err) {
         console.error("Error executing query:", err);
-        res.status(500).json({ error: "An error occurred" });
+        res.status(500).json({
+          error: "An error occurred"
+        });
       } else {
         res.status(200).json(results);
       }
     });
   } catch (error) {
     console.error("Error in GET /imagedata: " + error);
-    res.status(500).json({ error: "Internal server error" });
+    res.status(500).json({
+      error: "Internal server error"
+    });
   }
 });
 
@@ -1015,7 +1286,10 @@ router.get("/Customers", (req, res) => {
     const query = "SELECT * FROM user WHERE id = ?";
     connection.query(query, [req.query.adminid], (err, result) => {
       if (err) {
-        reject({ status: 500, error: "Failed to fetch investors" });
+        reject({
+          status: 500,
+          error: "Failed to fetch investors"
+        });
         return;
       }
 
@@ -1029,17 +1303,24 @@ router.get("/Customers", (req, res) => {
         connection.query(query, (err, results) => {
           if (err) {
             console.error(err);
-            return res.status(500).json({ error: "Internal Server Error" });
+            return res.status(500).json({
+              error: "Internal Server Error"
+            });
           }
 
           if (results.length === 0) {
-            return res.status(404).json({ error: "No investors found" });
+            return res.status(404).json({
+              error: "No investors found"
+            });
           }
 
           res.json(results);
         });
       } else {
-        res.json({ status: 400, error: "Missing token or adminId" });
+        res.json({
+          status: 400,
+          error: "Missing token or adminId"
+        });
       }
     });
   }
@@ -1056,12 +1337,16 @@ router.get("/Customerscount", (req, res) => {
   connection.query(query, (err, result) => {
     if (err) {
       console.error(err);
-      return res.status(500).json({ error: "Internal Server Error" });
+      return res.status(500).json({
+        error: "Internal Server Error"
+      });
     }
 
     const customerCount = result[0].customerCount;
 
-    res.json({ customerCount });
+    res.json({
+      customerCount
+    });
   });
 });
 
@@ -1072,7 +1357,10 @@ router.get("/paymentData", (req, res) => {
     const query = "SELECT * FROM user WHERE id = ?";
     connection.query(query, [req.query.adminid], (err, result) => {
       if (err) {
-        reject({ status: 500, error: "Failed to fetch investors" });
+        reject({
+          status: 500,
+          error: "Failed to fetch investors"
+        });
         return;
       }
 
@@ -1086,17 +1374,24 @@ router.get("/paymentData", (req, res) => {
         connection.query(query, (err, results) => {
           if (err) {
             console.error(err);
-            return res.status(500).json({ error: "Internal Server Error" });
+            return res.status(500).json({
+              error: "Internal Server Error"
+            });
           }
 
           if (results.length === 0) {
-            return res.status(404).json({ error: "No investors found" });
+            return res.status(404).json({
+              error: "No investors found"
+            });
           }
 
           res.json(results);
         });
       } else {
-        res.json({ status: 400, message: "missing Token or adminId" });
+        res.json({
+          status: 400,
+          message: "missing Token or adminId"
+        });
       }
     });
   }
@@ -1107,7 +1402,10 @@ router.get("/KycData", (req, res) => {
     const query = "SELECT * FROM user WHERE id = ?";
     connection.query(query, [req.query.adminid], (err, result) => {
       if (err) {
-        reject({ status: 500, error: "Failed to fetch investors" });
+        reject({
+          status: 500,
+          error: "Failed to fetch investors"
+        });
         return;
       }
 
@@ -1121,17 +1419,24 @@ router.get("/KycData", (req, res) => {
         connection.query(query, (err, results) => {
           if (err) {
             console.error(err);
-            return res.status(500).json({ error: "Internal Server Error" });
+            return res.status(500).json({
+              error: "Internal Server Error"
+            });
           }
 
           if (results.length === 0) {
-            return res.status(404).json({ error: "No investors found" });
+            return res.status(404).json({
+              error: "No investors found"
+            });
           }
 
           res.json(results);
         });
       } else {
-        res.json({ status: 400, message: "missing token or adminId" });
+        res.json({
+          status: 400,
+          message: "missing token or adminId"
+        });
       }
     });
   }
@@ -1142,7 +1447,10 @@ router.get("/bankData", (req, res) => {
     const query = "SELECT * FROM user WHERE id = ?";
     connection.query(query, [req.query.adminid], (err, result) => {
       if (err) {
-        reject({ status: 500, error: "Failed to fetch investors" });
+        reject({
+          status: 500,
+          error: "Failed to fetch investors"
+        });
         return;
       }
 
@@ -1156,17 +1464,24 @@ router.get("/bankData", (req, res) => {
         connection.query(query, (err, results) => {
           if (err) {
             console.error(err);
-            return res.status(500).json({ error: "Internal Server Error" });
+            return res.status(500).json({
+              error: "Internal Server Error"
+            });
           }
 
           if (results.length === 0) {
-            return res.status(404).json({ error: "No investors found" });
+            return res.status(404).json({
+              error: "No investors found"
+            });
           }
 
           res.json(results);
         });
       } else {
-        res.json({ status: 400, message: "missing token or adminId" });
+        res.json({
+          status: 400,
+          message: "missing token or adminId"
+        });
       }
     });
   }
@@ -1178,7 +1493,10 @@ router.get("/Investors", (req, res) => {
     const query = "SELECT * FROM user WHERE id = ?";
     connection.query(query, [req.query.adminid], (err, result) => {
       if (err) {
-        reject({ status: 500, error: "Failed to fetch investors" });
+        reject({
+          status: 500,
+          error: "Failed to fetch investors"
+        });
         return;
       }
 
@@ -1202,17 +1520,24 @@ router.get("/Investors", (req, res) => {
         connection.query(query, (err, results) => {
           if (err) {
             console.error(err);
-            return res.status(500).json({ error: "Internal Server Error" });
+            return res.status(500).json({
+              error: "Internal Server Error"
+            });
           }
 
           if (results.length === 0) {
-            return res.status(404).json({ error: "No investors found" });
+            return res.status(404).json({
+              error: "No investors found"
+            });
           }
 
           res.json(results);
         });
       } else {
-        res.json({ status: 400, message: "missing token or adminId" });
+        res.json({
+          status: 400,
+          message: "missing token or adminId"
+        });
       }
     });
   }
@@ -1235,7 +1560,10 @@ router.post("/addInvestor", (req, res) => {
     const query = "SELECT * FROM user WHERE id = ?";
     connection.query(query, [req.query.adminid], (err, result) => {
       if (err) {
-        reject({ status: 500, error: "Failed to fetch investors" });
+        reject({
+          status: 500,
+          error: "Failed to fetch investors"
+        });
         return;
       }
 
@@ -1255,7 +1583,9 @@ router.post("/addInvestor", (req, res) => {
               console.error(err);
               return res
                 .status(500)
-                .json({ error: "Error inserting into investor_users table" });
+                .json({
+                  error: "Error inserting into investor_users table"
+                });
             }
 
             const user_id = result.insertId;
@@ -1284,22 +1614,33 @@ router.post("/addInvestor", (req, res) => {
                   console.error(err);
                   return res
                     .status(500)
-                    .json({ error: "Error inserting into investor table" });
+                    .json({
+                      error: "Error inserting into investor table"
+                    });
                 }
 
                 res
                   .status(200)
-                  .json({ status: 200, message: "Data added successfully" });
+                  .json({
+                    status: 200,
+                    message: "Data added successfully"
+                  });
               }
             );
           }
         );
       } else {
-        res.json({ status: 400, message: "missing token or adminId" });
+        res.json({
+          status: 400,
+          message: "missing token or adminId"
+        });
       }
     });
   } else {
-    res.json({ status: 400, message: "missing token or adminId" });
+    res.json({
+      status: 400,
+      message: "missing token or adminId"
+    });
   }
 });
 
@@ -1308,9 +1649,15 @@ router.get("/user", (req, res) => {
   const selectQuery = "SELECT username FROM user";
   connection.query(selectQuery, (err, results) => {
     if (err) {
-      res.json({ status: 500, error: "Error retrieving data" });
+      res.json({
+        status: 500,
+        error: "Error retrieving data"
+      });
     } else {
-      res.json({ status: 200, data: results });
+      res.json({
+        status: 200,
+        data: results
+      });
     }
   });
 });
@@ -1320,9 +1667,15 @@ router.get("/userData", (req, res) => {
   const selectQuery = "SELECT * FROM user WHERE is_deleted = 0";
   connection.query(selectQuery, (err, results) => {
     if (err) {
-      res.json({ status: 500, error: "Error retrieving data" });
+      res.json({
+        status: 500,
+        error: "Error retrieving data"
+      });
     } else {
-      res.json({ status: 200, data: results });
+      res.json({
+        status: 200,
+        data: results
+      });
     }
   });
 });
@@ -1330,7 +1683,12 @@ router.get("/userData", (req, res) => {
 // user table post route
 router.post("/api/users", async (req, res) => {
   try {
-    const { username, email, role, password } = req.body;
+    const {
+      username,
+      email,
+      role,
+      password
+    } = req.body;
 
     // Check if the email already exists in the database
     const checkEmailQuery =
@@ -1341,7 +1699,9 @@ router.post("/api/users", async (req, res) => {
       async (checkErr, checkResult) => {
         if (checkErr) {
           console.error("Error checking email:", checkErr);
-          res.status(500).json({ message: "Internal Server Error" });
+          res.status(500).json({
+            message: "Internal Server Error"
+          });
           return;
         }
 
@@ -1351,7 +1711,10 @@ router.post("/api/users", async (req, res) => {
           // Email already exists, return an error response
           res
             .status(400)
-            .json({ status: 400, message: "Email already in use" });
+            .json({
+              status: 400,
+              message: "Email already in use"
+            });
           return;
         }
         const hashedPassword = await bcrypt.hash(password, 10);
@@ -1364,7 +1727,9 @@ router.post("/api/users", async (req, res) => {
           (insertErr, result) => {
             if (insertErr) {
               console.error("Error inserting user:", insertErr);
-              res.status(500).json({ message: "Internal Server Error" });
+              res.status(500).json({
+                message: "Internal Server Error"
+              });
               return;
             }
             console.log("User inserted successfully:", result);
@@ -1379,18 +1744,25 @@ router.post("/api/users", async (req, res) => {
     );
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Internal Server Error" });
+    res.status(500).json({
+      message: "Internal Server Error"
+    });
   }
 });
 
 // user table edit route
 router.put("/updateRole", (req, res) => {
   // const userId = req.params.email;
-  const { role, email } = req.body;
+  const {
+    role,
+    email
+  } = req.body;
 
   // Validate if role is provided in the request body
   if (!role) {
-    return res.status(400).json({ error: "Missing 'role' in the request body" });
+    return res.status(400).json({
+      error: "Missing 'role' in the request body"
+    });
   }
 
   // Update the role in both 'user' and 'investor_users' tables
@@ -1401,7 +1773,9 @@ router.put("/updateRole", (req, res) => {
   connection.query(updateUserRoleQuery, [role, email], (updateUserErr, userResult) => {
     if (updateUserErr) {
       console.error(updateUserErr);
-      return res.status(500).json({ error: "Internal Server Error" });
+      return res.status(500).json({
+        error: "Internal Server Error"
+      });
     }
 
     // Check if the user was found and updated in the 'user' table
@@ -1410,25 +1784,35 @@ router.put("/updateRole", (req, res) => {
       connection.query(updateInvestorRoleQuery, [role, email], (updateInvestorErr, investorResult) => {
         if (updateInvestorErr) {
           console.error(updateInvestorErr);
-          return res.status(500).json({ error: "Internal Server Error" });
+          return res.status(500).json({
+            error: "Internal Server Error"
+          });
         }
 
         // Check if the user was found and updated in the 'investor_users' table
         if (investorResult.affectedRows === 0) {
-          return res.status(404).json({ error: "User or investor not found or role not updated" });
+          return res.status(404).json({
+            error: "User or investor not found or role not updated"
+          });
         }
 
-        res.json({ status: 200, message: "User role updated successfully" });
+        res.json({
+          status: 200,
+          message: "User role updated successfully"
+        });
       });
     } else {
-      res.json({ status: 200, message: "User role updated successfully" });
+      res.json({
+        status: 200,
+        message: "User role updated successfully"
+      });
     }
   });
 });
 
 // investment + investor + investor_users table
 router.get("/userinvestment", (req, res) => {
-  
+
   const query = `
   SELECT 
     investment.investor_id,
@@ -1449,11 +1833,15 @@ router.get("/userinvestment", (req, res) => {
   connection.query(query, (err, results) => {
     if (err) {
       console.error(err);
-      return res.status(500).json({ error: "Internal Server Error" });
+      return res.status(500).json({
+        error: "Internal Server Error"
+      });
     }
 
     if (results.length === 0) {
-      return res.status(404).json({ error: "No investors found" });
+      return res.status(404).json({
+        error: "No investors found"
+      });
     }
 
     res.json(results);
@@ -1466,12 +1854,16 @@ router.get("/totalAmount", (req, res) => {
 
   connection.query(query, (error, results) => {
     if (error) {
-      res.status(500).json({ error: "Internal Server Error" });
+      res.status(500).json({
+        error: "Internal Server Error"
+      });
       throw error;
     }
 
     const totalAmount = results[0].totalAmount;
-    res.json({ totalAmount });
+    res.json({
+      totalAmount
+    });
   });
 });
 
@@ -1579,7 +1971,10 @@ router.post("/combined-api", upload.array("files"), (req, res) => {
     });
   } catch (error) {
     console.error(error);
-    res.status(500).send({ success: false, message: "Internal Server Error" });
+    res.status(500).send({
+      success: false,
+      message: "Internal Server Error"
+    });
   }
 });
 
@@ -1608,10 +2003,14 @@ router.put("/updateInvestorUser", (req, res) => {
     connection.query(updateQuery1, [email], (error, results, fields) => {
       if (error) {
         console.error("Error executing UPDATE query:", error);
-        res.status(500).json({ error: "Internal Server Error" });
+        res.status(500).json({
+          error: "Internal Server Error"
+        });
       } else {
         console.log("Updated successfully:", results);
-        res.status(200).json({ message: "Updated successfully" });
+        res.status(200).json({
+          message: "Updated successfully"
+        });
       }
     });
   });
@@ -1619,7 +2018,15 @@ router.put("/updateInvestorUser", (req, res) => {
 
 // nominee table routes 
 router.post('/nominee', (req, res) => {
-  const { id, user_id, name, dob, parentname, relationominee, contact } = req.body.data;
+  const {
+    id,
+    user_id,
+    name,
+    dob,
+    parentname,
+    relationominee,
+    contact
+  } = req.body.data;
   // console.log(req.body.data,"tttt");
   // console.log(req.body.parent_name);
 
@@ -1645,7 +2052,11 @@ router.post('/nominee', (req, res) => {
         return;
       }
 
-      res.status(201).json({ id: results.insertId, message: "data add successfully", status: 200 });
+      res.status(201).json({
+        id: results.insertId,
+        message: "data add successfully",
+        status: 200
+      });
     }
   );
 });
@@ -1666,13 +2077,21 @@ router.get('/nominee/:id', (req, res) => {
       return;
     }
 
-    res.status(200).json({ data: results });
+    res.status(200).json({
+      data: results
+    });
   });
 });
 
 router.put('/nominee/:user_id', (req, res) => {
   const userId = req.params.user_id;
-  const { name, dob, parentname, relationominee, contact } = req.body.data;
+  const {
+    name,
+    dob,
+    parentname,
+    relationominee,
+    contact
+  } = req.body.data;
 
   // Set server-side values
   const updatedDate = new Date(); // You might want to format this date according to your needs
@@ -1700,7 +2119,10 @@ router.put('/nominee/:user_id', (req, res) => {
         return;
       }
 
-      res.status(200).json({ message: 'Nominee updated successfully', status: 200 });
+      res.status(200).json({
+        message: 'Nominee updated successfully',
+        status: 200
+      });
     }
   );
 });
@@ -1719,14 +2141,20 @@ router.get("/Generaldetails/:id", (req, res) => {
   connection.query(query, [id], (err, results) => {
     if (err) {
       console.error(err);
-      return res.status(500).json({ error: "Internal Server Error" });
+      return res.status(500).json({
+        error: "Internal Server Error"
+      });
     }
 
     if (results.length === 0) {
-      return res.status(404).json({ error: "No investors found" });
+      return res.status(404).json({
+        error: "No investors found"
+      });
     }
 
-    res.status(200).json({ data: results });
+    res.status(200).json({
+      data: results
+    });
   });
 });
 
@@ -1734,10 +2162,15 @@ router.get("/Generaldetails/:id", (req, res) => {
 router.put('/update-address/:userId', async (req, res) => {
   try {
     const userId = req.params.userId;
-    const { address } = req.body;
+    const {
+      address
+    } = req.body;
 
     if (!address) {
-      return res.status(400).json({ success: false, message: 'Provide address in the request body' });
+      return res.status(400).json({
+        success: false,
+        message: 'Provide address in the request body'
+      });
     }
 
     // Update user address in the database
@@ -1757,12 +2190,18 @@ router.put('/update-address/:userId', async (req, res) => {
           return;
         }
 
-        res.status(200).json({ message: 'address updated successfully', status: 200 });
+        res.status(200).json({
+          message: 'address updated successfully',
+          status: 200
+        });
       }
     );
   } catch (error) {
     console.error(error);
-    res.status(500).json({ success: false, message: 'Internal Server Error' });
+    res.status(500).json({
+      success: false,
+      message: 'Internal Server Error'
+    });
   }
 });
 
@@ -1770,7 +2209,10 @@ router.put('/update-address/:userId', async (req, res) => {
 // code for solana pay 
 
 router.post('/solana-payment', async (req, res) => {
-  const { recipientPublicKey, amount } = req.body;
+  const {
+    recipientPublicKey,
+    amount
+  } = req.body;
 
   try {
     const fromWalletPrivateKey = '4QehXGxszDt5nYL4ZzJWtjhkQCvWxf2xdTxoJ3CPuainkWLc3HwUwkdzCZJwz6cqY4mDCceSFY9EMPJxnP4mRaSp'; // Replace with the private key of the wallet initiating the payment
@@ -1795,10 +2237,17 @@ router.post('/solana-payment', async (req, res) => {
     const qrCodeData = `sol:${recipientPublicKey}?amount=${amount}`;
     const qrCodeImage = await QRCode.toDataURL(qrCodeData);
 
-    res.json({ success: true, signature, qrCode: qrCodeImage });
+    res.json({
+      success: true,
+      signature,
+      qrCode: qrCodeImage
+    });
   } catch (error) {
     console.error('Solana payment error:', error);
-    res.status(500).json({ success: false, error: error.message });
+    res.status(500).json({
+      success: false,
+      error: error.message
+    });
   }
 });
 
@@ -1809,7 +2258,11 @@ router.post('/solana-payment', async (req, res) => {
 router.post('/bankdetails/:id', (req, res) => {
   const user_Id = req.params.id
   try {
-    const { ifsc_code, account_number, bank_name } = req.body;
+    const {
+      ifsc_code,
+      account_number,
+      bank_name
+    } = req.body;
     console.log(req.body, "llpppp");
 
     // Additional fields
@@ -1839,17 +2292,24 @@ router.post('/bankdetails/:id', (req, res) => {
     connection.query(query, newUser, (err, results) => {
       if (err) {
         console.error('Error inserting user into MySQL:', err);
-        return res.status(500).json({ error: 'Internal Server Error' });
+        return res.status(500).json({
+          error: 'Internal Server Error'
+        });
       }
 
       // Update the newUser object with the inserted user's ID
       newUser.id = results.insertId;
 
-      return res.json({ status: 200, message: "data inserted sucessfully" });
+      return res.json({
+        status: 200,
+        message: "data inserted sucessfully"
+      });
     });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ error: 'Internal Server Error' });
+    return res.status(500).json({
+      error: 'Internal Server Error'
+    });
   }
 });
 
@@ -1862,11 +2322,15 @@ router.get('/fetchbankdetails/:id', (req, res) => {
     connection.query(query, [user_Id], (err, results) => {
       if (err) {
         console.error('Error retrieving user details from MySQL:', err);
-        return res.status(500).json({ error: 'Internal Server Error' });
+        return res.status(500).json({
+          error: 'Internal Server Error'
+        });
       }
 
       if (results.length === 0) {
-        return res.status(404).json({ error: 'User not found.' });
+        return res.status(404).json({
+          error: 'User not found.'
+        });
       }
 
       const user = results[0];
@@ -1874,12 +2338,18 @@ router.get('/fetchbankdetails/:id', (req, res) => {
     });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ error: 'Internal Server Error' });
+    return res.status(500).json({
+      error: 'Internal Server Error'
+    });
   }
 });
 router.put('/updatebankdetails/:id', (req, res) => {
   const user_Id = req.params.id;
-  const { ifsc_code, account_number, bank_name } = req.body;
+  const {
+    ifsc_code,
+    account_number,
+    bank_name
+  } = req.body;
 
 
   try {
@@ -1889,20 +2359,145 @@ router.put('/updatebankdetails/:id', (req, res) => {
     connection.query(query, [account_number, ifsc_code, bank_name, user_Id], (err, results) => {
       if (err) {
         console.error('Error updating bank details in MySQL:', err);
-        return res.status(500).json({ error: 'Internal Server Error' });
+        return res.status(500).json({
+          error: 'Internal Server Error'
+        });
       }
 
       if (results.affectedRows === 0) {
-        return res.status(404).json({ error: 'User not found.' });
+        return res.status(404).json({
+          error: 'User not found.'
+        });
       }
 
-      return res.status(200).json({status:200, message: 'Bank details updated successfully.' });
+      return res.status(200).json({
+        status: 200,
+        message: 'Bank details updated successfully.'
+      });
     });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ error: 'Internal Server Error' });
+    return res.status(500).json({
+      error: 'Internal Server Error'
+    });
   }
 });
+
+
+
+// web 3 login route
+const users = [];
+
+// Dummy Ethereum address for demonstration
+const dummyAddress = '0x0123456789012345678901234567890123456789';
+
+// Endpoint for user login
+router.post('/logins', (req, res) => {
+  const {
+    address
+  } = req.body;
+
+  // Compare the provided address with the dummy address
+  if (address.toLowerCase() === dummyAddress.toLowerCase()) {
+    // Dummy authentication, you should replace this with your actual authentication logic
+    const user = {
+      address: dummyAddress,
+      name: 'John Doe'
+    };
+    users.push(user);
+    res.json({
+      success: true,
+      user
+    });
+  } else {
+    res.status(401).json({
+      success: false,
+      message: 'Invalid address'
+    });
+  }
+});
+// server.js
+
+
+// Handle payment endpoint
+router.post('/payment', (req, res) => {
+  const {
+    recipientAddress,
+    amount,
+    tokenMintAddress
+  } = req.body;
+  console.log('Payment received:', {
+    recipientAddress,
+    amount,
+    tokenMintAddress
+  });
+
+  res.json({
+    success: true,
+    status: 200,
+    message: "payment received succesfully"
+  });
+});
+
+router.post('/orders', async (req, res) => {
+  try {
+    const instance = new Razorpay({
+      key_id: process.env.KEY_ID,
+      key_secret: process.env.KEY_SECRET
+    });
+
+    const options = {
+			amount: req.body.amount * 100,
+			currency: "INR",
+			receipt: crypto.randomBytes(10).toString("hex"),
+		};
+
+    instance.orders.create(options, (error, order) => {
+      if (error) {
+        console.log(error);
+        return res.status(500).json({
+          message: "Something Went Wrong"
+        });
+      }
+      res.status(200).json({
+        data: order
+      });
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      message: "Internal Server Error"
+    });
+  }
+});
+
+
+router.post('/verify', async (req, res) => {
+  try {
+    const {
+      rezorpay_order_id,
+      rezorpay_payment_id,
+      rezorpay_signature
+    } = req.body
+
+    const sign = rezorpay_order_id + "|"+rezorpay_payment_id
+  const expectedSign = crypto.createHmac("sha256",process.env.key_secret).update(sign.toString()).digest("hex")
+
+  if (rezorpay_signature === expectedSign) {
+    return res.status(200).json({message:"payment verified successfully"})
+  }else{
+    return res.status(500).json({message:"invalid signature sent"})
+  }
+  
+  
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      message: "Internal Server Error"
+    });
+  }
+})
 
 
 module.exports = router;

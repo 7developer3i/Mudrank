@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 17, 2024 at 12:08 PM
+-- Generation Time: Feb 29, 2024 at 07:03 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -6556,7 +6556,7 @@ CREATE TABLE `investor_users` (
 
 INSERT INTO `investor_users` (`id`, `email`, `phone_number`, `verified`, `otp`, `otp_expiry`, `created_at`, `updated_at`, `token`, `is_deleted`, `is_logged_out`, `role`) VALUES
 (10, '90developer3i@gmail.com', '985748596', 1, '961088', '2024-01-16 08:50:58', '2023-08-03 02:15:03', '2024-01-16 08:50:58', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI5MDIzODAxMjYxIiwiaWF0IjoxNzA0MzQyMzc5fQ.BRY_NGQg3-uaE0AKkPFmMt6mPxGzAMmVYtgPIqJJCXA', 0, 0, 'superadmin'),
-(11, 'kkdeveloper@gmail.com', '9316477218', 1, '252520', '2024-01-17 10:52:11', '2023-08-03 04:42:17', '2024-01-17 10:52:11', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI5MzE2NDc3MjE4IiwiaWF0IjoxNzA1NDg4Njg0fQ.LDdHUy3zuIf386EBut4LZVnZW-Diyfe_hHOTggnKkjE', 0, 0, 'investor');
+(11, 'kkdeveloper@gmail.com', '9316477218', 1, '950868', '2024-01-20 04:44:03', '2023-08-03 04:42:17', '2024-01-20 04:44:03', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGVOdW1iZXIiOiI5MzE2NDc3MjE4IiwiaWF0IjoxNzA1NzI1ODQzfQ.WSi50F8iftuOpcSzBB8xJuFuG8rEd3WwmWwjzPnMchE', 0, 0, 'investor');
 
 -- --------------------------------------------------------
 
@@ -6684,6 +6684,29 @@ INSERT INTO `payment` (`id`, `user_id`, `razorpay_order_id`, `razorpay_payment_i
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pincodes`
+--
+
+CREATE TABLE `pincodes` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `pincode` int(11) NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `pincodes`
+--
+
+INSERT INTO `pincodes` (`id`, `pincode`, `status`, `created_at`, `updated_at`) VALUES
+(1, 385410, 'Active', '2021-04-01 06:47:11', '2021-04-01 06:47:11'),
+(2, 385001, 'Active', '2021-04-01 06:48:33', '2021-04-01 06:48:33'),
+(3, 6555, 'Active', '2021-04-01 06:52:54', '2021-04-01 06:52:54');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `privacy_table`
 --
 
@@ -6708,7 +6731,8 @@ INSERT INTO `privacy_table` (`id`, `para_item`, `content`, `created_date`, `upda
 (30, 'Changes to This Privacy Policyssss', 'This Privacy Policy will remain in effect except with respect to any changes in its provisions in the future, which will be in effect immediately after being posted on this page.', '2023-11-29 14:56:41', NULL, 0, 'pending'),
 (31, 'Contact Us', 'If you have any questions about this Privacy Policy, please contact us at contact@mudrank.com.', '2023-11-29 14:58:34', NULL, 0, 'pending'),
 (42, 'jbcjhw', 'testtt', '2023-12-06 12:08:30', NULL, 0, 'pending'),
-(43, 'jbcjhw', '  c c c    xsnjsd', '2023-12-09 17:54:47', NULL, 0, 'pending');
+(43, 'jbcjhw', '  c c c    xsnjsd', '2023-12-09 17:54:47', NULL, 0, 'pending'),
+(44, 'jbcjhw', 'aaaaa', '2024-01-18 14:21:54', NULL, 0, 'pending');
 
 -- --------------------------------------------------------
 
@@ -6904,7 +6928,7 @@ INSERT INTO `user` (`id`, `username`, `email`, `password`, `role`, `is_staff`, `
 (21, 'deep5678', 'deepj332001@gmail.com', '$2b$10$MS7Vbd1Mtt9V3kGj/Rk8XuQzf.VSsxRua9GleCOZ0YTc3ufyRC6ry', 'customer', 0, 0, 0, '0000-00-00 00:00:00', '2023-05-03 17:09:22', '2023-05-03 17:09:22', '2024-01-17 12:41:15', 0, 'active'),
 (25, 'deepj33', 'deepjpatel33@gmail.com', '$2b$10$OvsRpaV9LrY5ljeo2oPc3OXkXA0uQINye3X8d7n1/sV2RN7UhFwA.', 'admin', 0, 0, 0, '0000-00-00 00:00:00', '2023-05-08 17:18:00', '2023-05-08 17:18:00', '2023-12-25 17:07:34', 1, 'active'),
 (26, 'superadmin', 'superadmin@example.com', '$2b$10$CmC0t7QHN7otf9rGqmxGUuiB/4gG38QKYyk7wkfUVy/G.yQFtsMkO', 'admin', 0, 0, 0, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjYsImlhdCI6MTcwMjU1ODM2NH0.DbydE6y23bNCGV3ZrjiKGwKxCAfLHDLrtQA-ZnnR-UA', '2023-05-09 12:31:39', '2023-05-09 12:31:39', '2024-01-17 12:39:35', 0, 'active'),
-(32, 'hema1', 'hema1@gmail.com', '$2b$10$3vp5IqykT0fydmpP.7jfQe7zMlus8SlSK9SM3uo6hcJmlL1GHp0aG', 'superadmin', 0, 0, 0, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzIsImlhdCI6MTcwNTQ4OTU3MX0.92pYiJOaTtnY1RUYYcKMPlfxy2__6zQx6OPx3aafCxY', '2023-05-11 16:21:07', '2023-05-11 16:21:07', '2024-01-17 16:36:11', 1, 'active'),
+(32, 'hema1', 'hema1@gmail.com', '$2b$10$3vp5IqykT0fydmpP.7jfQe7zMlus8SlSK9SM3uo6hcJmlL1GHp0aG', 'superadmin', 0, 0, 0, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzIsImlhdCI6MTcwNTcyNjQ4NH0.eEAL8UpxBizg6pcg42RsZ0RTGXMqnWrIhQbU3RFcYbk', '2023-05-11 16:21:07', '2023-05-11 16:21:07', '2024-01-20 10:24:44', 1, 'active'),
 (34, 'deep2', 'deep2@gmail.com', '$2b$10$vhSMF8Q0I7tNo7yUtBqHs.WSK/r8wVDKWFDHdnnuHluTNijmT3bfK', 'admin', 0, 0, 0, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzQsImlhdCI6MTcwNTQ4MDQ3NX0.skkt-h9FXGOv45Ws4Uge9SdlY5ZgV-a3rMTst_cSk0I', '2023-05-12 17:49:59', '2023-05-12 17:49:59', '2024-01-17 14:04:35', 1, 'active');
 
 -- --------------------------------------------------------
@@ -7082,6 +7106,12 @@ ALTER TABLE `partners`
 ALTER TABLE `payment`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `pincodes`
+--
+ALTER TABLE `pincodes`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `privacy_table`
@@ -7283,10 +7313,16 @@ ALTER TABLE `payment`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT for table `pincodes`
+--
+ALTER TABLE `pincodes`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `privacy_table`
 --
 ALTER TABLE `privacy_table`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `raise_table`

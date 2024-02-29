@@ -124,6 +124,9 @@ export function Navbar() {
                   <li className={location.pathname === "/blog" ? "active" : ""}>
                     <Link to={"/blog"}>Blog</Link>
                   </li>
+                  {/* <li className={location.pathname === "/partners" ? "active" : ""}>
+                    <Link to={"/partners"}>Partners</Link>
+                  </li> */}
                   <li className={location.pathname === "/faq" ? "active" : ""}>
                     <Link to={"/faq"}>FAQ</Link>
                   </li>

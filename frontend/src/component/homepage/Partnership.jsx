@@ -97,7 +97,7 @@ export function Partnership() {
                                             </p>
                                         </div>
                                         <div className="startup_img">
-                                            <img src={exfin} alt=""/>
+                                            <img src={exfin} alt="" />
                                         </div>
                                     </div>
                                     <div className="startup_desc">
@@ -118,7 +118,7 @@ export function Partnership() {
                                             </p>
                                         </div>
                                         <div className="startup_img">
-                                            <img src={mix} alt=""/>
+                                            <img src={mix} alt="" />
                                         </div>
                                     </div>
                                     <div className="startup_desc">
@@ -139,7 +139,7 @@ export function Partnership() {
                                             </p>
                                         </div>
                                         <div className="startup_img">
-                                            <img src={exfin} alt=""/>
+                                            <img src={exfin} alt="" />
                                         </div>
                                     </div>
                                     <div className="startup_desc">
@@ -182,7 +182,7 @@ export function Partnership() {
                                             </p>
                                         </div>
                                         <div className="startup_img">
-                                            <img src={aws} alt=""/>
+                                            <img src={aws} alt="" />
                                         </div>
                                     </div>
                                     <div className="startup_desc">
@@ -225,7 +225,7 @@ export function Partnership() {
                                             </p>
                                         </div>
                                         <div className="startup_img">
-                                            <img src={exfin} alt=""/>
+                                            <img src={exfin} alt="" />
                                         </div>
                                     </div>
                                     <div className="startup_desc">
@@ -246,7 +246,7 @@ export function Partnership() {
                                             </p>
                                         </div>
                                         <div className="startup_img">
-                                            <img src={mix} alt=""/>
+                                            <img src={mix} alt="" />
                                         </div>
                                     </div>
                                     <div className="startup_desc">
@@ -271,7 +271,6 @@ export function Partnership() {
                         <div className="cmt_head"><h4>Investors</h4>
                             <h6>We're working to give you additional benefits, apart from all the investment opportunities. Stay tuned!</h6>
                         </div>
-
                     </div>
                 </div>
             </section>

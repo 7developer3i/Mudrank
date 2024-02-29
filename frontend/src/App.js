@@ -38,6 +38,9 @@ import { Imagehtml } from './image.js'
 import { Navbar } from "./component/homepage/Navbar.jsx";
 import { Footer } from "./component/homepage/Footer.jsx";
 import FileUploadForm from './import.js'
+import Solanapay from './solana.js'
+import {Rezorpay} from './rezorpay.js'
+
 
 
 // import DashboardPage from "../src/adminDash/src/appppp.jsx";
@@ -142,6 +145,8 @@ function App() {
             <Route path="bytes" element={<BytesPage />} />
             <Route path="/image" element={<Imagehtml />} />
             <Route path="/ch" element={<FileUploadForm />} />
+            <Route path="/solana" element={<Solanapay />} />
+            <Route path="/rezorpay" element={<Rezorpay />} />
 
 
           </Routes>
